@@ -13,7 +13,6 @@
         <item name="android:background">@null</item>
         <item name="android:textSize">25sp</item>
         <item name="android:textColor">@color/white</item>
-        <item name="android:onClick">numberAction</item>
     </style>
     <style name="buttonOperator">
         <item name="android:layout_weight">1</item>
@@ -22,6 +21,5 @@
         <item name="android:background">#1E1B1A</item>
         <item name="android:textSize">25sp</item>
         <item name="android:textColor">@color/orange</item>
-        <item name="android:onClick">operationAction</item>
     </style>
 </resources>
