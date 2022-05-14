@@ -7,8 +7,7 @@ import android.widget.Button
 import android.widget.TextView
 import net.objecthunter.exp4j.ExpressionBuilder
 
-class MainActivity : AppCompatActivity() {
-
+class CalcActivity : AppCompatActivity() {
     // TextView usado para exibir a entrada e a saída
     lateinit var txtInput: TextView
 
@@ -23,7 +22,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_calc)
         txtInput = findViewById(R.id.resultsTV)
     }
 
@@ -81,9 +80,9 @@ class MainActivity : AppCompatActivity() {
         // Se o estado atual for erro, nada a fazer.
         //Se a última entrada for apenas um número, a solução pode ser encontrada
         if (lastNumeric && !stateError) {
-             //Leia a expressão
+            //Leia a expressão
             val txt = txtInput.text.toString()
-             //Criar uma expressão
+            //Criar uma expressão
             //Uma classe da biblioteca exp4j
             val expression = ExpressionBuilder(txt).build()
             try {
@@ -92,7 +91,7 @@ class MainActivity : AppCompatActivity() {
                 txtInput.text = result.toString()
                 lastDot = true // O resultado contém um  dot ponto
             } catch (ex: ArithmeticException) {
-                 //Exibir uma mensagem de erro
+                //Exibir uma mensagem de erro
                 txtInput.text = "Error"
                 stateError = true
                 lastNumeric = false
