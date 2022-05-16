@@ -8,9 +8,7 @@
     android:orientation="vertical"
     android:background="@color/almostBlack"
     tools:ignore="HardcodedText"
-    tools:context=".CalcActivity">
-
-
+    tools:context=".CalcFragment">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -20,7 +18,19 @@
         android:padding="0dp">
 
         <TextView
-            android:id="@+id/resultsTV"
+            android:id="@+id/inputText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lines="2"
+            android:maxLines="1"
+            android:text=" "
+            android:textAlignment="textEnd"
+            android:textColor="@color/white"
+            android:textSize="40sp"
+            app:layout_constraintBottom_toTopOf="@+id/outputText" />
+
+        <TextView
+            android:id="@+id/outputText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text=" "
