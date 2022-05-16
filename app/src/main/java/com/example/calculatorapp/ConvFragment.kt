@@ -5,55 +5,54 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.*
+import com.example.calculatorapp.databinding.FragmentConvBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [ConvFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class ConvFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    lateinit var binding: FragmentConvBinding
+
+    lateinit var inputText: EditText
+    lateinit var outputText: TextView
+    lateinit var optCelcius: RadioButton
+    lateinit var optFahreinheit:RadioButton
+    lateinit var btnConverter: Button
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_conv, container, false)
+        binding = FragmentConvBinding.inflate(inflater, container,false)
+
+        inputText = binding.inputText
+        inputText.requestFocus()
+
+        outputText = binding.outputText
+        optCelcius = binding.optCelcius
+        optFahreinheit = binding.optFahreinheit
+        btnConverter = binding.btnConvert
+
+        btnConverter.setOnClickListener{convert(it)}
+
+        return return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ConvFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            ConvFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    fun convert(view: View) {
+        if (inputText.text.isEmpty()) {
+            val msg = Toast.makeText(view.context, "Digite o valor a ser convertido.", Toast.LENGTH_LONG)
+            msg.show()
+            return
+        }
+
+        var temp:Double = inputText.text.toString().toDouble()
+        temp = if (optCelcius.isChecked) {
+            (temp - 32) * 5/9
+        } else {
+            temp * 9/5 + 32
+        }
+
+        outputText.text = temp.toString()
     }
+
 }

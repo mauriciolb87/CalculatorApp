@@ -18,16 +18,17 @@ class MainActivity : AppCompatActivity() {
 
         loadFragment(CalcFragment())
         var bottomNav = binding.bottomNavigation
-        bottomNav.setOnNavigationItemReselectedListener {
+        bottomNav.setOnNavigationItemSelectedListener  {
             when (it.itemId) {
                 R.id.page_1 -> {
                     loadFragment(CalcFragment())
-                    return@setOnNavigationItemReselectedListener
+                    true
                 }
                 R.id.page_2 -> {
                     loadFragment(ConvFragment())
-                    return@setOnNavigationItemReselectedListener
+                    true
                 }
+             else -> false
             }
         }
     }

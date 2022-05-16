@@ -1,33 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#181818"
-    tools:context=".MainActivity">
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".ConvFragment">
 
-    <TextView
+    <EditText
         android:id="@+id/inputText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text=""
-        android:gravity="right"
-        android:paddingRight="10dp"
-        android:layout_above="@id/outputText"
-        android:textColor="@color/white"
-        android:textSize="40dp"/>
+        android:hint="Entre com a Temperatura"
+        android:textSize="18sp"
+        android:inputType="numberDecimal"/>
+
+    <RadioGroup
+        android:id="@+id/optCalcType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/optCelcius"
+            android:text="Celcius"
+            android:checked="false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <RadioButton
+            android:id="@+id/optFahreinheit"
+            android:text="Fahreinheit"
+            android:checked="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnConvert"
+        android:text="Converter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/orange"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="20dp"/>
 
     <TextView
         android:id="@+id/outputText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text=""
-        android:gravity="right"
-        android:paddingRight="10dp"
+        android:text=" "
+        android:lines="1"
+        android:maxLines="1"
         android:textColor="@color/white"
-        android:textSize="100dp"/>
+        android:textAlignment="textEnd"
+        android:textSize="40sp"/>
 
-
-
-</RelativeLayout>
+</LinearLayout>
