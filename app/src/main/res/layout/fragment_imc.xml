@@ -17,7 +17,7 @@
         android:hint="Altura em metros"
         android:layout_marginTop="20dp"
         android:ems="10"
-        android:inputType="number"/>
+        android:inputType="numberDecimal"/>
 
     <EditText
         android:id="@+id/edtPeso"
@@ -26,7 +26,7 @@
         android:layout_marginTop="10dp"
         android:hint="Peso em Kg"
         android:ems="10"
-        android:inputType="number"/>
+        android:inputType="numberDecimal"/>
 
     <Button
         android:id="@+id/btnCalcular"
