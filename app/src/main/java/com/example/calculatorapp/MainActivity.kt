@@ -28,6 +28,10 @@ class MainActivity : AppCompatActivity() {
                     loadFragment(ConvFragment())
                     true
                 }
+                R.id.page_3 -> {
+                    loadFragment(ImcFragment())
+                    true
+                }
              else -> false
             }
         }

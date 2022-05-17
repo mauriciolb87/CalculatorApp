@@ -22,25 +22,25 @@
 
         <RadioButton
             android:id="@+id/optCelcius"
-            android:text="Celcius"
-            android:checked="false"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="Celcius"
+            android:checked="false" />
 
         <RadioButton
             android:id="@+id/optFahreinheit"
-            android:text="Fahreinheit"
-            android:checked="true"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="Fahreinheit"
+            android:checked="true" />
 
     </RadioGroup>
 
     <Button
         android:id="@+id/btnConvert"
-        android:text="Converter"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="Converter"
         android:background="@color/orange"
         android:textColor="@android:color/white"
         android:layout_marginTop="20dp"/>

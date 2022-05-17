@@ -10,4 +10,9 @@
         android:enabled="true"
         android:icon="@drawable/ic_brightness"
         android:title="Tempo"/>
+    <item
+        android:id="@+id/page_3"
+        android:enabled="true"
+        android:icon="@drawable/ic_brightness"
+        android:title="IMC"/>
 </menu>
