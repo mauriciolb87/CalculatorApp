@@ -24,7 +24,7 @@ class ImcFragment : Fragment() {
             val peso = binding.edtPeso.text.toString().toDouble()
             val altura = binding.edtAltura.text.toString().toDouble()
 
-            val resultado = peso / altura * altura
+            val resultado = peso / (altura * altura)
 
             binding.resultsTV.text = "Seu IMC é $resultado"
         }
